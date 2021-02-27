@@ -1,0 +1,47 @@
+body {
+  background-color: #272532;
+}
+
+#kat {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #83CFDF;
+}
+
+nav {
+  height: 75px;
+  background-color: #373B69;
+}
+
+form {
+  margin-bottom: 0;
+}
+
+.movie-row {
+  background-color: #272532;
+}
+
+.movie-card-body {
+  color: white;
+  background-color: #373B69;
+}
+
+.card {
+  border: none;
+}
+
+.search-input {
+  border-color:#272532;
+  border-radius: 30px;
+  background-color: #373B69;
+}
+
+.search-input::placeholder {
+  color: #13688C;
+}
+
+.search-input:focus {
+  border-color: #272532;
+  background-color: #272532;
+}

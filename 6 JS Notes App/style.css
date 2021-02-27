@@ -1,0 +1,34 @@
+.note {
+  width: 300px;
+  height: 350px;
+}
+
+.note-header {
+  height: 50px;
+  background: aqua;
+}
+
+.textarea {
+  resize: none;
+  background-color: aliceblue;
+  border: none;
+}
+
+i {
+  margin-top: 10px;
+}
+
+.fa-trash-o {
+  margin-left: 8px;
+  margin-right: 3px;
+  font-size: 25px;
+}
+
+.fa-pencil-square-o {
+  font-size: 25px;
+}
+
+
+i:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,33 @@
+.heart-div {
+  display: inline-block;
+  width: 88%;
+}
+
+.fa-heart-o {
+  padding-top: 10px;
+  font-size: 25px;
+}
+
+.fa-heart-o:hover {
+  color: red;
+}
+
+.fa-heart-o-like {
+  color: red;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}

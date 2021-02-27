@@ -1,0 +1,363 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Recipes App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row mb-4 nav-row">
+      <div class="col">
+        <nav class="navbar navbar-light bg-light">
+          <a class="navbar-brand" href="index.html">Lapijeva kužina</a>
+          <a href="#" id="favorites">Omiljena jela</a>
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" id="searchInput" type="search" placeholder="Traži jelo"
+              aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Traži</button>
+          </form>
+        </nav>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center">
+        <div class="card" style="width: 35rem;">
+          <img src="images/burger.webp" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title food-name">Burger Classic</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#burgerModalScrollable">
+              Više
+            </button>
+            <div class="heart-div text-right">
+              <i class="fa fa-heart-o" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="burgerModalScrollable" tabindex="-1" role="dialog"
+          aria-labelledby="burgerModalScrollableTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="burgerModalScrollableTitle">Burger Classic</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h5 class="modal-title" id="burgerModalScrollableTitle">Opis</h5>
+
+                <p>Prošlogodišnji favorit i ove je godine odnio prvo mjesto. Submarine je jednoglasno osvojio simpatije
+                  sočnošću mesa. Pljeskavica je rahla, a kompaktna – figurativno rečeno lijepa i pametna. Neki bi dodali
+                  pinkicu soli mesu, ostali su guštali u pahuljastom okusu koji diže umami kobasice i pancete. Pecivo je
+                  meko, ali ne i gnjecavo niti previše slatko - baš odlikaški. Umak sjajno izbalansiran, a kremastu
+                  komponentu diže i sir. Sve u svemu, može se udati!</p>
+                <h5>Sastojci</h5>
+                <ul>
+                  <li>200g mljevenog mesa</li>
+                  <li>1 feta slanine</li>
+                  <li>1 feta pome</li>
+                  <li>1 list salate</li>
+                  <li>BBQ umak</li>
+                  <li>10g gljiva</li>
+                  <li>1 feta cheddar sira</li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center">
+        <div class="card" style="width: 35rem;">
+          <img src="images/kesadilja.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title food-name">Hot Quesadilla</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#quesadillaModalScrollable">
+              Više
+            </button>
+            <div class="heart-div text-right">
+              <i class="fa fa-heart-o" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="quesadillaModalScrollable" tabindex="-1" role="dialog"
+          aria-labelledby="quesadillaModalScrollableTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="quesadillaModalScrollableTitle">Hot Quesadilla</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h5 class="modal-title" id="quesadillaModalScrollableTitle">Opis</h5>
+
+                <p>Prošlogodišnji favorit i ove je godine odnio prvo mjesto. Submarine je jednoglasno osvojio simpatije
+                  sočnošću mesa. Pljeskavica je rahla, a kompaktna – figurativno rečeno lijepa i pametna. Neki bi dodali
+                  pinkicu soli mesu, ostali su guštali u pahuljastom okusu koji diže umami kobasice i pancete. Pecivo je
+                  meko, ali ne i gnjecavo niti previše slatko - baš odlikaški. Umak sjajno izbalansiran, a kremastu
+                  komponentu diže i sir. Sve u svemu, može se udati!</p>
+                <h5>Sastojci</h5>
+                <ul>
+                  <li>200g mljevenog mesa</li>
+                  <li>1 feta slanine</li>
+                  <li>1 feta pome</li>
+                  <li>1 list salate</li>
+                  <li>BBQ umak</li>
+                  <li>10g gljiva</li>
+                  <li>1 feta cheddar sira</li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center">
+        <div class="card" style="width: 35rem;">
+          <img src="images/njoki.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title food-name">Njoki sa tartufima</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#njokiModalScrollable">
+              Više
+            </button>
+            <div class="heart-div text-right">
+              <i class="fa fa-heart-o" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="njokiModalScrollable" tabindex="-1" role="dialog"
+          aria-labelledby="njokiModalScrollableTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="njokiModalScrollableTitle">Njoki sa tartufima</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h5 class="modal-title" id="njokiModalScrollableTitle">Opis</h5>
+
+                <p>Prošlogodišnji favorit i ove je godine odnio prvo mjesto. Submarine je jednoglasno osvojio simpatije
+                  sočnošću mesa. Pljeskavica je rahla, a kompaktna – figurativno rečeno lijepa i pametna. Neki bi dodali
+                  pinkicu soli mesu, ostali su guštali u pahuljastom okusu koji diže umami kobasice i pancete. Pecivo je
+                  meko, ali ne i gnjecavo niti previše slatko - baš odlikaški. Umak sjajno izbalansiran, a kremastu
+                  komponentu diže i sir. Sve u svemu, može se udati!</p>
+                <h5>Sastojci</h5>
+                <ul>
+                  <li>200g mljevenog mesa</li>
+                  <li>1 feta slanine</li>
+                  <li>1 feta pome</li>
+                  <li>1 list salate</li>
+                  <li>BBQ umak</li>
+                  <li>10g gljiva</li>
+                  <li>1 feta cheddar sira</li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center">
+        <div class="card" style="width: 35rem;">
+          <img src="images/pizza.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title food-name">Pizza</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pizzaModalScrollable">
+              Više
+            </button>
+            <div class="heart-div text-right">
+              <i class="fa fa-heart-o" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="pizzaModalScrollable" tabindex="-1" role="dialog"
+          aria-labelledby="pizzaModalScrollableTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="pizzaModalScrollableTitle">Pizza</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h5 class="modal-title" id="pizzaModalScrollableTitle">Opis</h5>
+
+                <p>Prošlogodišnji favorit i ove je godine odnio prvo mjesto. Submarine je jednoglasno osvojio simpatije
+                  sočnošću mesa. Pljeskavica je rahla, a kompaktna – figurativno rečeno lijepa i pametna. Neki bi dodali
+                  pinkicu soli mesu, ostali su guštali u pahuljastom okusu koji diže umami kobasice i pancete. Pecivo je
+                  meko, ali ne i gnjecavo niti previše slatko - baš odlikaški. Umak sjajno izbalansiran, a kremastu
+                  komponentu diže i sir. Sve u svemu, može se udati!</p>
+                <h5>Sastojci</h5>
+                <ul>
+                  <li>200g mljevenog mesa</li>
+                  <li>1 feta slanine</li>
+                  <li>1 feta pome</li>
+                  <li>1 list salate</li>
+                  <li>BBQ umak</li>
+                  <li>10g gljiva</li>
+                  <li>1 feta cheddar sira</li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center">
+        <div class="card" style="width: 35rem;">
+          <img src="images/tiramisu.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title food-name">Tiramisu</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tiramisuModalScrollable">
+              Više
+            </button>
+            <div class="heart-div text-right">
+              <i class="fa fa-heart-o" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="tiramisuModalScrollable" tabindex="-1" role="dialog"
+          aria-labelledby="tiramisuModalScrollableTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="tiramisuModalScrollableTitle">Tiramisu</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h5 class="modal-title" id="tiramisuModalScrollableTitle">Opis</h5>
+
+                <p>Prošlogodišnji favorit i ove je godine odnio prvo mjesto. Submarine je jednoglasno osvojio simpatije
+                  sočnošću mesa. Pljeskavica je rahla, a kompaktna – figurativno rečeno lijepa i pametna. Neki bi dodali
+                  pinkicu soli mesu, ostali su guštali u pahuljastom okusu koji diže umami kobasice i pancete. Pecivo je
+                  meko, ali ne i gnjecavo niti previše slatko - baš odlikaški. Umak sjajno izbalansiran, a kremastu
+                  komponentu diže i sir. Sve u svemu, može se udati!</p>
+                <h5>Sastojci</h5>
+                <ul>
+                  <li>200g mljevenog mesa</li>
+                  <li>1 feta slanine</li>
+                  <li>1 feta pome</li>
+                  <li>1 list salate</li>
+                  <li>BBQ umak</li>
+                  <li>10g gljiva</li>
+                  <li>1 feta cheddar sira</li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center">
+        <div class="card" style="width: 35rem;">
+          <img src="images/tuna.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title food-name">Tuna steak</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tunaModalScrollable">
+              Više
+            </button>
+            <div class="heart-div text-right">
+              <i class="fa fa-heart-o" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="tunaModalScrollable" tabindex="-1" role="dialog"
+          aria-labelledby="tunaModalScrollableTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="tunaeModalScrollableTitle">Tuna steak</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h5 class="modal-title" id="tunaModalScrollableTitle">Opis</h5>
+
+                <p>Prošlogodišnji favorit i ove je godine odnio prvo mjesto. Submarine je jednoglasno osvojio simpatije
+                  sočnošću mesa. Pljeskavica je rahla, a kompaktna – figurativno rečeno lijepa i pametna. Neki bi dodali
+                  pinkicu soli mesu, ostali su guštali u pahuljastom okusu koji diže umami kobasice i pancete. Pecivo je
+                  meko, ali ne i gnjecavo niti previše slatko - baš odlikaški. Umak sjajno izbalansiran, a kremastu
+                  komponentu diže i sir. Sve u svemu, može se udati!</p>
+                <h5>Sastojci</h5>
+                <ul>
+                  <li>200g mljevenog mesa</li>
+                  <li>1 feta slanine</li>
+                  <li>1 feta pome</li>
+                  <li>1 list salate</li>
+                  <li>BBQ umak</li>
+                  <li>10g gljiva</li>
+                  <li>1 feta cheddar sira</li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+    integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

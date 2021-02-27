@@ -1,0 +1,9 @@
+//////////NAUCENO//////////
+1. flexbox se uvik samo odnosi na parent div
+   npr. <bla><p> --> display:flex vridi za ponasanje 'p' elementa
+   npr. <bla bla><bla><p> --> display:flex vridi za ponasanje 'bla' elementa
+2. sve stvari koje nisu dinamicne odnosno uvik su konstante najbolje
+   stavit u niz i tako ih dohvacat
+   - isto tako vridi i za css vrijednosti koje se ne minjaju
+3. dohvacanje css vrijednosti
+3. pisanje algoritma na papir je sve, na pocetku nisan ima pojma nista niti ideju kako pocet 

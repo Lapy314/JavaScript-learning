@@ -1,0 +1,77 @@
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+font-family: 'Roboto', sans-serif;
+}
+/* reset */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul[class],
+ol[class] {
+	padding: 0;
+	list-style: none;
+}
+
+/* utility classes */
+
+.flow-content > * + * {
+  margin-top: 1em;
+}
+
+/* general styling */
+.wrapper {
+  width: 61rem;
+  height: 100vh;
+  margin: 0 auto;
+  background: #e3e3e3;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+.header-ul {
+  display: inline-block;
+  text-align: left;
+  width: 75%;
+}
+
+.header-ul li{
+  display: inline-block;
+  cursor: pointer;
+  width: 25%;
+}
+
+input {
+  display: inline-block;
+}
+
+.countdown {
+  width: 50%;
+  font-size: 6rem;
+  margin: 0 auto;
+  padding-top: 250px;
+}
+
+.system-clock {
+  width: 50%;
+  font-size: 2rem;
+  margin: 0 auto;
+}

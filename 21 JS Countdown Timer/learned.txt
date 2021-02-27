@@ -1,0 +1,17 @@
+1. jako dobra scope vjezba, utvrdivanje da vanjske funkcije nemaju pristup onima koje nisu ugnijezdene
+   npr. one iz item event listenera nisu dostupne countdown funkciji
+
+2. let timer = setInterval(); --> funkcija se odma poziva
+   let timer = setInterval; --> funkcija se sprema u varijablu pa se kasnije poziva timer()
+
+   - u ovon slucaju aplikacije, timer je samo pomocna varijabla
+
+   - takoder odlicna scope vjezba je koristenje timer varijable unutar aplikacije, odnosi se na tocku pod br.1,
+   ovako san definira u window scopeu pa je tada ta varijabla globalno dostupna te se po zelji moze spremit nova vrijednost
+   u nasen slucaju setInterval poziv ovisno o tome odakle se poziva --> iskoristija san mogucnost da se pozove odmah po 
+   spremanju funkcije sa drugin parametrima, a na pocetku nisan ima ideju kako je postavit globalno
+
+3. clearInterval(timer) --> zaustavljamo interval
+
+4. Date.now() --> daje sat i datum u milisekundama
+   new Date() --> daje formatiran datum i sat, moze primit argument u ms

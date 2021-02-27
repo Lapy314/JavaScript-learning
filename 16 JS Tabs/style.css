@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --h-spacing: 4%;
+  --fw-700: 700;
+}
+
+.flow-content > * + * {
+  margin-top: 1em;
+}
+
+.flow-content-h-spacing > * + * {
+  margin-left: var(--h-spacing);
+}
+
+body {
+  font-size: 1.3em;
+  background: #0072B9;
+}
+
+.wrapper {
+  margin: 0 auto;
+  margin-top: 60px;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 960px;
+  background: #fff;
+  padding: 1em;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+button {
+  display: inline-block;
+  font-weight: var(--fw-700);
+  width: 30%;
+  padding: 1.2em 4em;
+  border: none;
+}
+
+.active-btn {
+  background: #FFC600;
+}
+
+.content-div {
+  display: none;
+  width: 100%;
+  background: #FFC600;
+  padding: 3.5em 1em;
+}
+
+.active-div {
+  display: block;
+}

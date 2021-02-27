@@ -1,0 +1,4 @@
+1. puno bolje upoznavanje sa viewportom i nacinu kako se prikazuje sadrzaj unutar njega
+2. clientX, Y -> odnosi se na viewport odnosno ono sta vidimo kroz browser u ton momentu
+3. pageX, Y -> rendera zapravo cili dokument, te ako npr skrolamo kroz stranicu taj property ima vrijednost cilog dokumenta
+4. innerWidth, Height -> viewport dimenzije

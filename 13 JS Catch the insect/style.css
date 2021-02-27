@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.box {
+  display: inline-block;
+  border: 1px solid black;
+}
+
+.play-screen {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f4f4f4;
+  position: relative;
+}
+
+
+/* .logo {
+  display: block;
+  position: absolute;
+} */

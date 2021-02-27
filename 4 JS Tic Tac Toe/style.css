@@ -1,0 +1,58 @@
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 0;
+  text-align: center;
+  font-size: 6em;
+}
+
+.box {
+  color: white;
+}
+
+.startGameModal {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.startGameModal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+.box-top-row {
+  border-bottom: 3px solid black;
+}
+
+.box-mid-row {
+  border-bottom: 3px solid black;
+}
+
+.box-mid-col {
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+}
+
+.circle {
+  color: red;
+}
+
+.glow-circle {
+  color: #fff;
+  text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px red, 0 0 12px red, 0 0 15px red, 0 0 18px red, 0 0 21px red;
+}
+
+.glow-cross{
+  color: #fff;
+  text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px #0073e6, 0 0 12px #0073e6, 0 0 15px #0073e6, 0 0 18px #0073e6, 0 0 21px #0073e6;
+}

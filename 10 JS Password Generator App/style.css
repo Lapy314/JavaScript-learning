@@ -1,0 +1,14 @@
+.row {
+  height: 100vh;
+}
+.password-div {
+  margin-top: 200px;
+  width: 350px;
+  height: 400px;
+  border: 1px solid black;
+}
+
+#pwLength {
+  display: inline-block;
+  width: 80px;
+}

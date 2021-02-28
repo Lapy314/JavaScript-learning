@@ -16,6 +16,9 @@ const apiKey = 'y2GY6i1K3YxbSGJJRVqQRyoGoRlofZAl';
 let cityName = document.querySelector(".city-name");
 const date_span = document.querySelector(".date");
 const day_span = document.querySelector(".day");
+const btnSubmit = document.querySelector(".btn-submit");
+const weatherFormat = document.querySelector("#temperatura-format");
+const weatherDegrees = document.querySelector("#temperatura-value")
 
 //dohvati datum 
 function getDate() {
@@ -37,38 +40,30 @@ function getDate() {
   date_span.textContent = today;
 }
 
-//dohvati temperaturu
-function handleTemperature() {
-  const weatherFormat = document.querySelector("#temperatura-format");
-  const weatherDegrees = document.querySelector("#temperatura-value")
-  console.log(weatherDegrees.textContent)
-  if (selectorTemp.value === "fahrenheit") {
-    weatherDegrees.innerHTML = Math.round(parseFloat((parseInt(weatherDegrees.textContent) * 1.8) + 32));
-    weatherFormat.innerHTML = "&degF";
-  } else if (selectorTemp.value === "celsius") {
-    weatherDegrees.innerHTML = Math.round(parseInt(((parseInt(weatherDegrees.textContent) - 32) * 0.5556)));
-    weatherFormat.innerHTML = "&degC";
-  }
-}
-
 //format sata 12/24
 function handleHourFormat() {
   let now = new Date();
+  let hours = now.getHours();
   let minutes = now.getMinutes();
   let seconds = now.getSeconds();
   minutesDiv.innerHTML = minutes;
   secondsDiv.innerHTML = seconds;
+
+  console.log(hours);
+
+  (hours < 10) ? hourDiv.innerHTML = `0${hours}` : hourDiv.innerHTML = `${hours}`;
+  (minutes < 10) ? minutesDiv.innerHTML = `0${minutes}` : minutesDiv.innerHTML = `${minutes}`;
+  (seconds < 10) ? secondsDiv.innerHTML = `0${seconds}` : secondsDiv.innerHTML = `${seconds}`;
+
   if (selectorHourFormat.value === "12h") {
-    let hours = now.getHours();
-    if (hours <= 12) {
-      hourDiv.innerHTML = hours + `<p class = "clockText">am</p>`;
+    if (hours === 0) {
+      hourDiv.innerHTML = `<span class = "clockText">am</span> ${hours + 12}`;
+    } else if (hours <= 12) {
+      hourDiv.innerHTML = `<span class = "clockText">am</span> ${hours}`;
     } else {
       hourDiv.innerHTML = `<span class = "clockText">pm</span> ${hours - 12}`;
     }
-  } else if (selectorHourFormat.value === "24h") {
-    let hours = now.getHours();
-    hourDiv.innerHTML = hours;
-  }
+  } 
 }
 
 //slideri za jacinu glowa
@@ -100,11 +95,13 @@ async function handleCityTemperature(cityKey) {
   const response = await fetch(url);
   const data = await response.json();
 
+  console.log(data);
+
   return data;
 }
 
 //default podaci pri pokretanju
-function loadCityData () {
+function loadCityData() {
   const weatherDegrees = document.querySelector("#temperatura-value");
   const weatherConditions = document.querySelector("#weather-conditions");
   handleCitySearch("kastel stafilic")
@@ -114,15 +111,15 @@ function loadCityData () {
       return handleCityTemperature(data[0].Key);
     })
     .then(data => {
-      weatherDegrees.textContent = Math.round(parseInt(data[0].Temperature.Metric.Value));
+      weatherDegrees.textContent = data[0].Temperature.Metric.Value;
       weatherConditions.textContent = data[0].WeatherText;
       getWeatherIcon(data[0].WeatherIcon);
     });
 }
 
 //forma za grad
-cityForm.addEventListener("submit", (e) => {
-  e.preventDefault();
+btnSubmit.addEventListener("click", (e) => {
+
   let weatherDegrees = document.querySelector("#temperatura-value");
   const weatherConditions = document.querySelector("#weather-conditions");
 
@@ -133,10 +130,17 @@ cityForm.addEventListener("submit", (e) => {
       return handleCityTemperature(data[0].Key);
     })
     .then(data => {
-      weatherDegrees.textContent = Math.round(parseInt(data[0].Temperature.Metric.Value));
+      if (selectorTemp.value === "celsius") {
+        weatherDegrees.textContent = data[0].Temperature.Metric.Value;
+        weatherFormat.innerHTML = "&degC";
+      } else {
+        weatherDegrees.textContent = data[0].Temperature.Imperial.Value;
+        weatherFormat.innerHTML = "&degF";
+      }
       weatherConditions.textContent = data[0].WeatherText;
       getWeatherIcon(data[0].WeatherIcon);
     });
+
 });
 
 //dohvaca ikonu za prikaz vrimena
@@ -144,20 +148,15 @@ function getWeatherIcon(weatherIcon) {
   const weatherIconImg = document.querySelector("#weather-icon");
   if (weatherIcon < 6) {
     weatherIconImg.setAttribute("src", "img/sun.png");
-  } else if (weatherIcon < 18) {
+  } else if (weatherIcon > 5 && weatherIcon < 12) {
     weatherIconImg.setAttribute("src", "img/cloud.png");
-  }  else if (weatherIcon === 18) {
-    weatherIconImg.setAttribute("src", "img/cloud.png");
-  }  else if (weatherIcon < 12) {
-    weatherIconImg.setAttribute("src", "img/cloud.png");
+  } else if (weatherIcon > 11 && weatherIcon < 19) {
+    weatherIconImg.setAttribute("src", "img/rain.png");
+  } else if (weatherIcon > 32 && weatherIcon < 45) {
+    weatherIconImg.setAttribute("src", "img/moon.png");
   }
 }
 
-// spremiBtn.addEventListener("click", (e) => {
-//   e.submit();
-// })
-
-selectorTemp.addEventListener("change", handleTemperature);
 selectorHourFormat.addEventListener("change", handleHourFormat);
 
 setInterval(handleHourFormat, 1000);

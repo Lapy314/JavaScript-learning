@@ -4,7 +4,7 @@ const noteRow = document.querySelector(".note-row");
 let i=0;
 function handleNote() {
   const newNote = document.createElement("div");
-  newNote.classList.add("col-12", "note-div");
+  newNote.classList.add("col-12", "note-div", "mt-3");
   newNote.setAttribute("data-note", `${i}`);
   newNote.innerHTML = `
                         <div class="note-header text-right">

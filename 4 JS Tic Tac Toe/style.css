@@ -1,5 +1,6 @@
 .board {
   display: grid;
+  margin-top: 1em;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   padding: 0;
@@ -25,9 +26,18 @@
 .startGameModal-content {
   background-color: #fefefe;
   margin: 15% auto;
-  padding: 20px;
+  padding: 3em;
   border: 1px solid #888;
-  width: 50%;
+  width: 25%;
+}
+
+.btn-div {
+  margin-top: 5em;
+}
+
+.btn-div button {
+  width: 160px;
+  padding: 0.6em 1.2em;
 }
 
 .box-top-row {
